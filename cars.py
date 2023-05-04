@@ -1,4 +1,5 @@
-
+import keyboard
+import turtle
 class Cars:
     def __init__(self,model,name,color,engine = False, x = 0,):
         self.name = name
@@ -8,8 +9,10 @@ class Cars:
         self.model = model
     def engineon(self):
         self.engine = True
+        print('Двигатель включён')
     def engineoff(self):
         self.engine = False
+        print('Двигатель выключен')
     def move_vperiod(self):
         if self.engine:
             self.x += 9
@@ -28,19 +31,54 @@ class Cars:
 bmw = Cars('x5','bmw', 'black')
 wolksvagen = Cars('polo','wolksvagen','blue')
 lada = Cars('priora','lada','grey')
-car = input('Выберете машину')
-reap = 0
-while reap <= 10:
-    if input() == 'w':
-        lada.move_vperiod()
-        reap = reap + 1
-    if input() == 's':
-        reap = reap + 1
-        lada.move_nazad()
-    if input() == 'e':
-        lada.engineon()
-        reap = reap + 1
-    if input() == 'q':
-        lada.engineoff()
-        reap = reap + 1
-
+def choose_car():
+    car = input('Выберете машину')
+    if car == 'bmw':
+        reap = 0
+        while reap <=10:
+            a = input()
+            if a == 'w':
+                bmw.move_vperiod()
+                reap = reap + 1
+            if a == 's':
+                bmw.move_nazad()
+                reap = reap + 1
+            if a == 'e':
+                bmw.engineon()
+                reap = reap + 1
+            if a == 'q':
+                bmw.engineoff()
+                reap = reap + 1
+    if car == 'lada':
+        reap = 0
+        while reap <=10:
+            a2 = input()
+            if a2 == 'w':
+                lada.move_vperiod()
+                reap = reap + 1
+            if a2 == 's':
+                lada.move_nazad()
+                reap = reap + 1
+            if a2 == 'e':
+                lada.engineon()
+                reap = reap + 1
+            if a2 == 'q':
+                lada.engineoff()
+                reap = reap + 1
+    if car == 'wolksvagen':
+        reap = 0
+        while reap <=10:
+            a3 = input()
+            if a3 == 'w':
+                wolksvagen.move_vperiod()
+                reap = reap + 1
+            if a3 == 's':
+                wolksvagen.move_nazad()
+                reap = reap + 1
+            if a3 == 'e':
+                wolksvagen.engineon()
+                reap = reap + 1
+            if a3 == 'q':
+                wolksvagen.engineoff()
+                reap = reap + 1
+choose_car()
