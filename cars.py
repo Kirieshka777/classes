@@ -25,12 +25,24 @@ class Cars:
             print(f'Проехал назад {self.x}')
         else:
             print('Включи двигатель!!!!!!')
+class Truck(Cars):
+    def put(self):
+        print('вы положили что то')
+class Bike:
+    def __init__(self,color,x) -> None:
+        self.color = color
+        self.x = x
+    def move(self):
+        self.x += 1
+        print(f'Проехал 1 и оказался {self.x}')
+
     
         
         
 bmw = Cars('x5','bmw', 'black')
 wolksvagen = Cars('polo','wolksvagen','blue')
 lada = Cars('priora','lada','grey')
+kamaz = Truck('kamaz','black')
 def choose_car():
     car = input('Выберете машину')
     if car == 'bmw':
@@ -81,4 +93,4 @@ def choose_car():
             if a3 == 'q':
                 wolksvagen.engineoff()
                 reap = reap + 1
-choose_car()
+#choose_car()
